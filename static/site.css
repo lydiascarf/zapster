@@ -36,9 +36,15 @@ body, html {
 }
 
 .title {
-  color: black;
-  text-align: center;
+  background: none;
   border: none;
+  color: black;
+  margin-bottom: 12px;
+  padding: 4px 6px;
+  pointer-events: all;
+  text-align: center;
+  text-decoration: inherit; /* no underline */
+  user-select: none;
 }
 
 @keyframes fade-in {
@@ -54,7 +60,7 @@ body, html {
 
 .fade-in {
   opacity: 0;
-  animation: 3s linear 0.15s forwards fade-in;
+  animation: 3s linear 0s forwards fade-in;
 }
 
 #assistant {
@@ -74,18 +80,21 @@ h2 {
 	flex-direction: column;
 }
 
-a,  button {
+a {
+  border: #fff solid 2px;
+}
+
+a.link {
   text-align: center;
   pointer-events: all;
   padding: 4px 6px;
   background: none;
   margin-bottom: 12px;
-  border: #fff solid 2px;
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
   user-select: none;
 }
 
-a:hover, button:hover, a:active, button:active {
+a.link:hover, a.link:active {
   background: radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 90%); 
 }

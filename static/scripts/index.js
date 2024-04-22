@@ -1,10 +1,11 @@
-const pseudoAnchorAttributes = `class="button" href="javascript:void(0);"`
+const pseudoAnchorAttributes = `class="link pseudo-anchor" href="javascript:void(0);"`
+const linkAttrs = `class="link"`
 const frames = {
   '/': {
     html: `
       <div class="column fade-in">
         <h3></h3>
-        <a href="https://www.yocale.com/widget/a-business">I'm ready to book</a>
+        <a href="https://www.yocale.com/widget/a-business" ${linkAttrs}>I'm ready to book</a>
         <a data-slug="/contact" ${pseudoAnchorAttributes}>I have a question</a>
       </div>
     `,
@@ -41,11 +42,11 @@ const frames = {
   '/contact': {
     html: `
       <div class="column fade-in">
-        <a href="https://www.yocale.com/widget/a-business">Book us</a>
-        <a href="/blog">Check out the blog</a>
-        <a href="mailto:transcend.electrolysis@gmail.com?subject=Client%20Question" target="_blank" rel="noopener noreferrer" id="button-email">Email us</a>
-        <a href="tel:+12157983100">215-798-3100</a>
-        <a href="tel:+12679274247">267-ZAP-HAIR</a>
+        <a href="https://www.yocale.com/widget/a-business" ${linkAttrs}>Book us</a>
+        <a href="/blog" ${linkAttrs}>Check out the blog</a>
+        <a href="mailto:transcend.electrolysis@gmail.com?subject=Client%20Question" target="_blank" rel="noopener noreferrer" ${linkAttrs}>Email us</a>
+        <a href="tel:+12157983100" ${linkAttrs}>215-798-3100</a>
+        <a href="tel:+12679274247" ${linkAttrs}>267-ZAP-HAIR</a>
         <p>Flexible Hours By Appointment, Including Evenings and Weekends</p>
         <p>1601 Walnut St, Ste 501, Philadelphia, PA 19102</p>
       </div>
@@ -92,11 +93,11 @@ const setState = (callback) => {
 const updateTree = () => {
   document.getElementById("assistant").innerHTML = Assistant();
 
-  const buttons = Array.from(document.getElementsByClassName('button'))
-  buttons.forEach(button => {
-    if (button.dataset.slug) {
-      button.addEventListener("click", () =>
-        Assistant.state.setPage(button.dataset.slug)
+  const pseudoAnchors = Array.from(document.getElementsByClassName('pseudo-anchor'))
+  pseudoAnchors.forEach(pseudoAnchor => {
+    if (pseudoAnchor.dataset.slug) {
+      pseudoAnchor.addEventListener("click", () =>
+        Assistant.state.setPage(pseudoAnchor.dataset.slug)
       )
     }
   })

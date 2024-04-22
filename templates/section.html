@@ -18,7 +18,7 @@
         <div class="column">
           {% block content %}
               {% for page in section.pages %}
-              <a href="/blog/{{page.slug}}">{{page.title}}</a> 
+              <a class="link" href="/blog/{{page.slug}}">{{page.title}}</a> 
               {% endfor %}
           {% endblock content %}
         </div>

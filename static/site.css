@@ -1,0 +1,91 @@
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Merriweather", sans-serif;
+    overflow: hidden;
+}
+
+@font-face {
+ font-family: "Merriweather";
+ src: url("Merriweather-Regular.ttf");
+}
+
+.container {
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.4)), url("background.webp");
+  height: 100%;
+  display: flex;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow:scroll;
+
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  color: black;
+  text-align: center;
+  border: none;
+}
+
+@keyframes fade-in {
+  from {
+    /* pushes the sun down past the viewport */
+    opacity: 0%;
+  }
+  to {
+    /* returns the sun to its default position */
+    opacity: 100%;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: 3s linear 0.15s forwards fade-in;
+}
+
+#assistant {
+  clear: both;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+a,  button {
+  text-align: center;
+  pointer-events: all;
+  padding: 4px 6px;
+  background: none;
+  margin-bottom: 12px;
+  border: #fff solid 2px;
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+  user-select: none;
+}
+
+a:hover, button:hover, a:active, button:active {
+  background: radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 90%); 
+}

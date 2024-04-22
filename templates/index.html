@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zapster</title>
+    <link href="{{ get_url(path="normalize.css", cachebust=true) | safe }}" rel="stylesheet">
+    <link href="{{ get_url(path="site.css", cachebust=true) | safe }}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel">
+        <a class="title" href="/">
+          <h1>Zapster</h1>
+          <h2>Laser & Electrolysis</h2>
+        </a>
+        <div id="assistant"></div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://app.yocale.com/tentacle/tentacle.v1.0.0.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+        s.onload = s.onreadystatechange = function() {
+          if (!this.readyState || this.readyState === 'complete') {
+            Tentacle.run({
+              business: 'a-business',
+              type:'FLOATING',
+              label:'Book Now',
+              labelColor:'#FFFFFF',
+              backgroundColor:'#FA68D3',
+              disableIcon:true,
+              buttonStyles:{
+              }
+            });
+          }
+        };
+      })();
+      </script>
+      <script src="scripts/index.js"></script>
+  </body>
+</html>

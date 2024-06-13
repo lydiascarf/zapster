@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://lydiascarf.github.io/zapster/"
+base_url = "https://lydiascarf.github.io/zapster"
 
 [extra]
 # Put all your custom variables here

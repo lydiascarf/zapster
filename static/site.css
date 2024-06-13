@@ -1,16 +1,14 @@
 @font-face {
- font-family: "Questrial";
- src: url("Questrial-Regular.ttf");
+  font-family: "Questrial";
+  src: url("Questrial-Regular.ttf");
 }
+
 @font-face {
- font-family: "Syne";
- src: url("Syne-Bold.ttf");
+  font-family: "Syne";
+  src: url("Syne-Bold.ttf");
 }
 
 /* by element type */
-a {
-}
-
 a.link {
   border: #fff solid 0.1em;
   font-family: 'Syne', sans-serif;
@@ -19,14 +17,17 @@ a.link {
   padding: 4px 6px;
   background: none;
   margin-bottom: 12px;
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+  color: inherit;
+  /* blue colors for links too */
+  text-decoration: inherit;
+  /* no underline */
   user-select: none;
-  height:fit-content;
+  height: fit-content;
 }
 
-a.link:hover, a.link:active {
-  background: radial-gradient(circle, rgba(255,255,255,1), transparent); 
+a.link:hover,
+a.link:active {
+  background: radial-gradient(circle, rgba(255, 255, 255, 1), transparent);
 }
 
 html {
@@ -40,14 +41,14 @@ html {
 
 body {
   /* Position and center the image to scale nicely on all screens */
-  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.4)), url("background.webp");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4)), url("background.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   min-height: 100%;
   min-width: 100%;
-  
+
   position: relative;
 }
 
@@ -59,8 +60,12 @@ h2 {
   font-size: 2em;
 }
 
+main {
+  margin-top: 5em;
+}
+
 nav {
-  background-image: linear-gradient(rgba(249,202,247,0.7), rgba(249,202,247,0.2) 70%, transparent);
+  background-image: linear-gradient(rgba(249, 202, 247, 0.7), rgba(249, 202, 247, 0.2) 70%, transparent);
   position: sticky;
   top: 0;
   display: flex;
@@ -70,14 +75,8 @@ nav {
   padding: 1.5rem 6rem;
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  height: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+p {
+  text-align: center;
 }
 
 .title {
@@ -89,7 +88,8 @@ nav {
   padding: 4px 6px;
   pointer-events: all;
   text-align: center;
-  text-decoration: inherit; /* no underline */
+  text-decoration: inherit;
+  /* no underline */
   user-select: none;
 }
 
@@ -98,6 +98,7 @@ nav {
     /* pushes the sun down past the viewport */
     opacity: 0%;
   }
+
   to {
     /* returns the sun to its default position */
     opacity: 100%;
@@ -106,14 +107,28 @@ nav {
 
 .fade-in {
   opacity: 0;
-  animation: 3s linear 0s forwards fade-in;
-}
-
-#assistant {
-  clear: both;
+  animation: 2s linear 0s forwards fade-in;
 }
 
 .column {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll {
+  border-bottom: pink solid 0.3em;
+  scrollbar-color: pink transparent;
+  overflow-y: auto;
+  height: calc(100vh - 500px);
+  width: 80%;
+  box-shadow: 0.5em 0.5em;
+}
+
+.scroll::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+.scroll::-webkit-scrollbar-thumb:vertical {
+  background-color: pink;
 }

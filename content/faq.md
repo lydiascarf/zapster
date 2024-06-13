@@ -2,10 +2,10 @@
 title = "FAQ"
 +++
 
-<div class="column fade-in">
+<div class="column scroll fade-in">
   <h3>Where are you located?</h3>
   <p>We perform electrolysis and consultations at <a href="https://maps.app.goo.gl/ELzdvZycmVgiZGsK6">1601 Walnut St, Ste 501, Philadelphia, PA 19102</a></p>
-  <p>We perform laser hair removal at 112 N Broad St, Floor 12, Philadelphia, PA 19102</p>
+  <p>We perform laser hair removal at <a href="https://maps.app.goo.gl/Mp8uCUEbKG6c61766">112 N Broad St, Floor 12, Philadelphia, PA 19102</a></p>
   <h3>How can I get in touch with you?</h3>
   <p>If you have a quick question, get in touch by email or by phone:</p>
   <div class="column">

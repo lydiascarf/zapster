@@ -9,19 +9,19 @@
     <link href="{{ get_url(path="site.css", cachebust=true) | safe }}" rel="stylesheet">
   </head>
   <body>
-    <nav>
+    <nav class="fade-in">
       <a class="title" href="{{ config.base_url }}">  
         <h2>Zapster</h2>
       </a>
-      <a class="link fade-in" href="/electrolysis">Electrolysis</a>
-      <a class="link fade-in" href="/laser-hair-removal">Laser</a>
-      <a class="link fade-in" href="/blog">Blog</a>
-      <a class="link fade-in" href="/faq">FAQ</a>
+      <a class="link" href="/electrolysis">Electrolysis</a>
+      <a class="link" href="/laser-hair-removal">Laser</a>
+      <a class="link" href="/blog">Blog</a>
+      <a class="link" href="/faq">FAQ</a>
     </nav>
     <main>
-      <div class="panel">
+      <h2 class="title fade-in" >{{ page.title | safe }}</h2>
+      <div class="column">
         {% block content %}
-          <h2 class="title" >{{ page.title | safe }}</h2>
           {{ page.content | safe }}
         {% endblock content %}
       </div>

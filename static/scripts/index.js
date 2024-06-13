@@ -30,20 +30,6 @@ const frames = {
   //     </div> 
   //   `
   // },
-  '/contact': {
-    html: `
-      <div class="column fade-in">
-        <a href="https://www.yocale.com/widget/zapster" ${linkAttrs}>Book us</a>
-        <a href="/blog" ${linkAttrs}>Check out the blog</a>
-        <a href="mailto:transcend.electrolysis@gmail.com?subject=Client%20Question" target="_blank" rel="noopener noreferrer" ${linkAttrs}>Email us</a>
-        <a href="tel:+12157983100" ${linkAttrs}>215-798-3100</a>
-        <a href="tel:+12679274247" ${linkAttrs}>267-ZAP-HAIR</a>
-        <p>Flexible Hours By Appointment, Including Evenings and Weekends</p>
-        <p>1601 Walnut St, Ste 501, Philadelphia, PA 19102</p>
-      </div>
-    `
-  },
-
 };
 
 

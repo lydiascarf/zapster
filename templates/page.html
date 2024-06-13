@@ -9,45 +9,22 @@
     <link href="{{ get_url(path="site.css", cachebust=true) | safe }}" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <a class="title" href="{{ config.base_url }}">
-        <h1>Zapster</h1>
-        <h2>Laser & Electrolysis</h2>
+    <nav>
+      <a class="title" href="{{ config.base_url }}">  
+        <h2>Zapster</h2>
       </a>
+      <a class="link fade-in" href="/electrolysis">Electrolysis</a>
+      <a class="link fade-in" href="/laser-hair-removal">Laser</a>
+      <a class="link fade-in" href="/blog">Blog</a>
+      <a class="link fade-in" href="/faq">FAQ</a>
+    </nav>
+    <main>
       <div class="panel">
         {% block content %}
-          <h2>{{ page.title | safe }}</h2>
-          <h4 style="align-self: flex-end;">{{ page.date | date(format="%A %-d %B") }}</h4>
+          <h2 class="title" >{{ page.title | safe }}</h2>
           {{ page.content | safe }}
-
-          {% if page.earlier %}Previous article: {{ page.earlier.permalink }}{% endif %}
-          {% if page.later %}Next article: {{ page.later.permalink }}{% endif %}
         {% endblock content %}
       </div>
-    </div>
-    <script>
-      (function() {
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'https://app.yocale.com/tentacle/tentacle.v1.0.0.js';
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-        s.onload = s.onreadystatechange = function() {
-          if (!this.readyState || this.readyState === 'complete') {
-            Tentacle.run({
-              business: 'a-business',
-              type:'FLOATING',
-              label:'Book Now',
-              labelColor:'#FFFFFF',
-              backgroundColor:'#FA68D3',
-              disableIcon:true,
-              buttonStyles:{
-              }
-            });
-          }
-        };
-      })();
-      </script>
+    </main>
   </body>
 </html>

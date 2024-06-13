@@ -1,28 +1,71 @@
-body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: "Merriweather", sans-serif;
-    overflow: hidden;
-}
-
 @font-face {
- font-family: "Merriweather";
- src: url("Merriweather-Regular.ttf");
+ font-family: "Questrial";
+ src: url("Questrial-Regular.ttf");
+}
+@font-face {
+ font-family: "Syne";
+ src: url("Syne-Bold.ttf");
 }
 
-.container {
-  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.4)), url("background.webp");
-  height: 100%;
-  display: flex;
+/* by element type */
+a {
+  border: #fff solid 0.1em;
+}
 
+a.link {
+  font-family: 'Syne', sans-serif;
+  text-align: center;
+  pointer-events: all;
+  padding: 4px 6px;
+  background: none;
+  margin-bottom: 12px;
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+  user-select: none;
+}
+
+a.link:hover, a.link:active {
+  background: radial-gradient(circle, rgba(255,255,255,1), transparent); 
+}
+
+html {
+  font-family: "Questrial", sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+}
+
+body {
   /* Position and center the image to scale nicely on all screens */
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.4)), url("background.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  overflow:scroll;
 
+  min-height: 100%;
+  min-width: 100%;
+  
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+nav {
+  background-image: linear-gradient(rgba(249,202,247,0.7), rgba(249,202,247,0.2) 70%, transparent);
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1.5rem 6rem;
 }
 
 .panel {
@@ -39,6 +82,7 @@ body, html {
   background: none;
   border: none;
   color: black;
+  font-family: "Syne", sans-serif;
   margin-bottom: 12px;
   padding: 4px 6px;
   pointer-events: all;
@@ -67,34 +111,7 @@ body, html {
   clear: both;
 }
 
-h1 {
-  font-size: 3em;
-}
-
-h2 {
-  font-size: 2em;
-}
-
 .column {
 	display: flex;
 	flex-direction: column;
-}
-
-a {
-  border: #fff solid 2px;
-}
-
-a.link {
-  text-align: center;
-  pointer-events: all;
-  padding: 4px 6px;
-  background: none;
-  margin-bottom: 12px;
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
-  user-select: none;
-}
-
-a.link:hover, a.link:active {
-  background: radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 90%); 
 }

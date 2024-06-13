@@ -1,15 +1,6 @@
 const pseudoAnchorAttributes = `class="link pseudo-anchor" href="javascript:void(0);"`
 const linkAttrs = `class="link"`
 const frames = {
-  '/': {
-    html: `
-      <div class="column fade-in">
-        <h3></h3>
-        <a href="https://www.yocale.com/widget/a-business" ${linkAttrs}>I'm ready to book</a>
-        <a data-slug="/contact" ${pseudoAnchorAttributes}>I have a question</a>
-      </div>
-    `,
-  },
   // '/returning': {
   //   html: `
   //     <div class="column fade-in">
@@ -42,7 +33,7 @@ const frames = {
   '/contact': {
     html: `
       <div class="column fade-in">
-        <a href="https://www.yocale.com/widget/a-business" ${linkAttrs}>Book us</a>
+        <a href="https://www.yocale.com/widget/zapster" ${linkAttrs}>Book us</a>
         <a href="/blog" ${linkAttrs}>Check out the blog</a>
         <a href="mailto:transcend.electrolysis@gmail.com?subject=Client%20Question" target="_blank" rel="noopener noreferrer" ${linkAttrs}>Email us</a>
         <a href="tel:+12157983100" ${linkAttrs}>215-798-3100</a>
@@ -52,14 +43,7 @@ const frames = {
       </div>
     `
   },
-  // '/book-consultation': {
-  //   html: `
-  //     <div class="column fade-in">
-  //       <h3>It sounds like you could use a consultation!</h3>
-  //       <a href="https://www.yocale.com/widget/a-business">Book us</a>
-  //     </div>
-  //   `
-  // }
+
 };
 
 

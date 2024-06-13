@@ -118,17 +118,25 @@ p {
 
 .scroll {
   border-bottom: pink solid 0.3em;
-  scrollbar-color: pink transparent;
   overflow-y: auto;
   height: calc(100vh - 500px);
   width: 80%;
   box-shadow: 0.5em 0.5em;
 }
 
-.scroll::-webkit-scrollbar-track-piece {
-  background-color: transparent;
+/* For browsers that support `scrollbar-*` properties */
+@supports (scrollbar-color: auto) {
+  .scroll {
+    scrollbar-color: pink transparent;
+  }
 }
 
-.scroll::-webkit-scrollbar-thumb:vertical {
-  background-color: pink;
+/* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
+@supports selector(::-webkit-scrollbar) {
+  .scroll::-webkit-scrollbar {
+    background: transparent;
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background: pink;
+  }
 }

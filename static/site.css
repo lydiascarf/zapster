@@ -10,13 +10,16 @@
 
 /* by element type */
 a.link {
-  border: #fff solid 0.1em;
   font-family: 'Syne', sans-serif;
   text-align: center;
   pointer-events: all;
-  padding: 4px 6px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0.7em 2em 0.3em 2em;
   background: none;
-  margin-bottom: 12px;
+  margin-bottom: 0.75em;
   color: inherit;
   /* blue colors for links too */
   text-decoration: inherit;
@@ -61,18 +64,29 @@ h2 {
 }
 
 main {
-  margin-top: 5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  min-height: calc(100vh - 4em);
+  min-width: calc(100vw - 4em);
 }
 
 nav {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   background-image: linear-gradient(rgba(249, 202, 247, 0.7), rgba(249, 202, 247, 0.2) 70%, transparent);
   position: sticky;
   top: 0;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 6rem;
+  padding: 1.5em 6em;
+  min-height: calc(50vh - 4em - 3em);
+  min-width: calc(100vw - 4em - 12em);
 }
 
 p {
@@ -84,30 +98,13 @@ p {
   border: none;
   color: black;
   font-family: "Syne", sans-serif;
-  margin-bottom: 12px;
-  padding: 4px 6px;
+  margin-bottom: 0.75em;
+  padding: 0.25em 0.4em;
   pointer-events: all;
   text-align: center;
   text-decoration: inherit;
   /* no underline */
   user-select: none;
-}
-
-@keyframes fade-in {
-  from {
-    /* pushes the sun down past the viewport */
-    opacity: 0%;
-  }
-
-  to {
-    /* returns the sun to its default position */
-    opacity: 100%;
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: 2s linear 0s forwards fade-in;
 }
 
 .column {
@@ -116,18 +113,22 @@ p {
   align-items: center;
 }
 
+.scroll-border {
+  border:  #fce3f7 solid 0.2em;
+  border-radius: 15px;
+  min-height: 60vh;
+  padding: 0 2em;
+}
+
 .scroll {
-  border-bottom: pink solid 0.3em;
   overflow-y: auto;
-  height: calc(100vh - 500px);
-  width: 80%;
-  box-shadow: 0.5em 0.5em;
+
 }
 
 /* For browsers that support `scrollbar-*` properties */
 @supports (scrollbar-color: auto) {
   .scroll {
-    scrollbar-color: pink transparent;
+    scrollbar-color: #f179d9 transparent;
   }
 }
 
@@ -137,6 +138,98 @@ p {
     background: transparent;
   }
   .scroll::-webkit-scrollbar-thumb {
-    background: pink;
+    background: #f179d9;
   }
 }
+
+.sub-nav {
+  display: flex;
+}
+
+/* media queries */
+@media (min-width:20em)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+  .mobile-only {
+    display: initial;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  main {
+    padding: 0.5em;
+    min-height: calc(100vh - 1em);
+    min-width: calc(100vw - 1em);
+  }
+
+  nav {
+    padding: 0.5em;
+    min-height: calc(30vh);
+    min-width: calc(100vw - 2em);
+  }
+
+  a.link {
+    padding: 0;
+    margin-bottom: 1em;
+    text-decoration:underline;
+  }
+
+  .sub-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .scroll {
+      margin: 0 0.5em;
+  min-width: calc(100vw - 5em);
+  height: calc(100vh - 16em);
+  }
+}
+
+@media (min-width:30em)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: initial;
+  }
+
+  main {
+    padding: 2em;
+    min-height: calc(100vh - 4em);
+    min-width: calc(100vw - 4em);
+  }
+
+  nav {
+    padding: 1.5em 3em;
+
+    min-height: calc(10vh);
+    min-width: calc(100vw - 4em - 6em );
+  }
+
+  a.link {
+    margin-bottom: 1em;
+    padding: 0.7em 2em 0.3em 2em;
+    text-decoration: inherit;
+  }
+
+  .sub-nav {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50vw;
+  }
+
+  .scroll {
+    margin: 0 0.5em;
+    height: calc(50vh - 4em - 3em);
+    min-width: calc(100vw - 4em - 12em);
+  }
+}
+
+@media (min-width:40em)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:60em)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:64em) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:80em) { /* hi-res laptops and desktops */ }

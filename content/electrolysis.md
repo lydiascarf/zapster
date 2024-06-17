@@ -2,7 +2,6 @@
 title = "Electrolysis"
 +++
 
-<div class="column scroll fade-in">
   <h3>New to electrolysis or not sure if it's right for you?</h3>
   <a class="link" href="https://www.yocale.com/widget/zapster?locations=154042&op=304958~-1">Book a consultation</a>
   <h3>Are you a returning customer or experienced with electrolysis?</h3>
@@ -30,4 +29,3 @@ title = "Electrolysis"
   <p>We are highly trained in the use of both modern methods of electrolysis: Thermolysis/Flash/Shortwave and Blend/Galvanic.</p>
   <h3>Your Journey to Silky Skin Starts Here</h3>
   <p>At Zapster Electrolysis and Laser Hair Removal, every session is more than just a treatment; it celebrates your beauty and confidence. Let Isabella and Kathy guide you on this transformative journey to achieve a confident and empowered version of yourself. Say so long to unwanted hair and hello to a new level of self-assurance.</p>
-</div>

@@ -10,16 +10,20 @@
   </head>
   <body>
     <main>
-      <a class="title" href="{{ config.base_url }}">  
-        <h1>Zapster</h1>
-        <h2>Laser & Electrolysis</h2>
-      </a>
-      <div class="column fade-in">
-        <a class="link fade-in" href="{{ config.base_url }}/electrolysis">About Electrolysis</a>
-        <a class="link fade-in" href="{{ config.base_url }}/laser-hair-removal">About Laser</a>
-        <a class="link fade-in" href="https://www.yocale.com/widget/zapster">Book Now</a>
-        <a class="link fade-in" href="{{ config.base_url }}/blog">Blog</a>
-        <a class="link fade-in" href="{{ config.base_url }}/faq">FAQ</a>
+      <nav style="justify-content: center;">
+        <a class="title" href="{{ config.base_url }}">  
+          <h1>Zapster</h1>
+          <h2>Laser & Electrolysis</h2>
+        </a>
+      </nav>
+      <div class="column">
+        <div class="column">
+          <a class="link" href="https://www.yocale.com/widget/zapster">Book Now</a>
+          <a class="link" href="{{ config.base_url }}/blog">Blog</a>
+          <a class="link" href="{{ config.base_url }}/electrolysis">Electrolysis</a>
+          <a class="link" href="{{ config.base_url }}/laser-hair-removal">Laser</a>
+          <a class="link" href="{{ config.base_url }}/faq">FAQ</a>
+        </div>
       </div>
     </main>
   </body>

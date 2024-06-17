@@ -9,18 +9,22 @@
     <link href="{{ get_url(path="site.css", cachebust=true) | safe }}" rel="stylesheet">
   </head>
   <body>
-    <nav class="fade-in">
-      <a class="title" href="{{ config.base_url }}">  
-        <h2>Zapster</h2>
-      </a>
-      <a class="link" href="{{ config.base_url }}/electrolysis">Electrolysis</a>
-      <a class="link" href="{{ config.base_url }}/laser-hair-removal">Laser</a>
-      <a class="link" href="{{ config.base_url }}/blog">Blog</a>
-      <a class="link" href="{{ config.base_url }}/faq">FAQ</a>
-    </nav>
     <main>
-      <h2 class="title fade-in" >{{ page.title | safe }}</h2>
-      <div class="column">
+      <nav>
+        <a class="title" href="{{ config.base_url }}">  
+          <h2>Zapster</h2>
+        </a>
+        <div class="sub-nav">
+          <a class="link" href="https://www.yocale.com/widget/zapster">Book Now</a>
+          <a class="link" href="{{ config.base_url }}/blog">Blog</a>
+          <a class="link" href="{{ config.base_url }}/electrolysis">Electrolysis</a>
+          <a class="link" href="{{ config.base_url }}/laser-hair-removal">Laser</a>
+          <a class="link" href="{{ config.base_url }}/faq">FAQ</a>
+        </div>
+      </nav>
+      <h2 class="title desktop-only" >{{ page.title | safe }}</h2>
+      <div class="column scroll scroll-border">
+        <h2 class="title mobile-only" >{{ page.title | safe }}</h2>
         {% block content %}
           {{ page.content | safe }}
         {% endblock content %}

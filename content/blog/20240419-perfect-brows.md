@@ -1,7 +1,6 @@
 +++
 title = "Achieving Perfect Brows: A Comprehensive Guide to Electrolysis"
 aliases = ["/post/achieving-perfect-brows-a-comprehensive-guide-to-electrolysis"]
-slug = "20240419-perfect-brows"
 date = 2024-04-19
 +++
 

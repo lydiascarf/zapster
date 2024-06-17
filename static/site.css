@@ -17,13 +17,10 @@ a.link {
   border-top-right-radius: 30px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 0.7em 2em 0.3em 2em;
+  padding: 0.7em 1em 0.3em 1em;
   background: none;
-  margin-bottom: 0.75em;
   color: inherit;
-  /* blue colors for links too */
   text-decoration: inherit;
-  /* no underline */
   user-select: none;
   height: fit-content;
 }
@@ -63,6 +60,19 @@ h2 {
   font-size: 2em;
 }
 
+h3 {
+  font-size: 1.6em;
+
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+a, p {
+  font-size: 1.2em;
+}
+
 main {
   display: flex;
   justify-content: flex-start;
@@ -98,12 +108,10 @@ p {
   border: none;
   color: black;
   font-family: "Syne", sans-serif;
-  margin-bottom: 0.75em;
   padding: 0.25em 0.4em;
   pointer-events: all;
   text-align: center;
   text-decoration: inherit;
-  /* no underline */
   user-select: none;
 }
 
@@ -117,7 +125,7 @@ p {
   border:  #fce3f7 solid 0.2em;
   border-radius: 15px;
   min-height: 60vh;
-  padding: 0 2em;
+  padding: 1em 2em 0 2em;
 }
 
 .scroll {
@@ -181,9 +189,9 @@ p {
   }
 
   .scroll {
-      margin: 0 0.5em;
-  min-width: calc(100vw - 5em);
-  height: calc(100vh - 16em);
+    margin: 0 0.5em;
+    width: calc(100vw - 5em);
+    height: calc(100vh - 20em);
   }
 }
 
@@ -197,21 +205,20 @@ p {
   }
 
   main {
-    padding: 2em;
-    min-height: calc(100vh - 4em);
-    min-width: calc(100vw - 4em);
+    padding: 1em;
+    min-height: calc(100vh - 2em);
+    min-width: calc(100vw - 2em);
   }
 
   nav {
     padding: 1.5em 3em;
-
     min-height: calc(10vh);
-    min-width: calc(100vw - 4em - 6em );
+    min-width: calc(100vw - 2em - 6em );
   }
 
   a.link {
-    margin-bottom: 1em;
-    padding: 0.7em 2em 0.3em 2em;
+    /* margin-bottom: 1em; */
+    padding: 0.7em 1em 0.3em 1em;
     text-decoration: inherit;
   }
 
@@ -223,9 +230,9 @@ p {
   }
 
   .scroll {
-    margin: 0 0.5em;
-    height: calc(50vh - 4em - 3em);
-    min-width: calc(100vw - 4em - 12em);
+    margin: 0 3.5em;
+    height: calc(50vh - 7em);
+    width: calc(100vw - 14em);
   }
 }
 

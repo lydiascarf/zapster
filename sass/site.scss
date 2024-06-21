@@ -1,3 +1,7 @@
+$base-color: #fff;
+$border-dark: rgba($base-color, 0.75);
+$font-size: 1.2em;
+
 @font-face {
   font-family: "Questrial";
   src: url("Questrial-Regular.ttf");
@@ -41,36 +45,33 @@ html {
 
 body {
   /* Position and center the image to scale nicely on all screens */
-  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4)), url("background.webp");
+  background-image: url("background.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
   min-height: 100%;
   min-width: 100%;
-
   position: relative;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: $font-size + 1.8em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: $font-size + 0.8em;
 }
 
 h3 {
-  font-size: 1.6em;
-
+  font-size: $font-size + 0.4em;
 }
 
 h4 {
-  font-size: 1.4em;
+  font-size: $font-size + 0.2em;
 }
 
 a, p {
-  font-size: 1.2em;
+  font-size: $font-size;
 }
 
 main {
@@ -84,19 +85,19 @@ main {
 }
 
 nav {
+  align-items: flex-start;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5) 70%, transparent);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  background-image: linear-gradient(rgba(249, 202, 247, 0.7), rgba(249, 202, 247, 0.2) 70%, transparent);
-  position: sticky;
-  top: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  padding: 1.5em 6em;
   min-height: calc(50vh - 4em - 3em);
   min-width: calc(100vw - 4em - 12em);
+  padding: 1.5em 6em;
+  position: sticky;
+  top: 0;
 }
 
 p {
@@ -122,21 +123,21 @@ p {
 }
 
 .scroll-border {
-  border:  #fce3f7 solid 0.2em;
+  border: $border-dark solid 0.2em;
+  background: radial-gradient(circle, #fff, #fff 70%, transparent);
   border-radius: 15px;
-  min-height: 60vh;
+  min-height: 40vh;
   padding: 1em 2em 0 2em;
 }
 
 .scroll {
   overflow-y: auto;
-
 }
 
 /* For browsers that support `scrollbar-*` properties */
 @supports (scrollbar-color: auto) {
   .scroll {
-    scrollbar-color: #f179d9 transparent;
+    scrollbar-color: $border-dark transparent;
   }
 }
 
@@ -146,12 +147,22 @@ p {
     background: transparent;
   }
   .scroll::-webkit-scrollbar-thumb {
-    background: #f179d9;
+    background: #777;
   }
+}
+
+#menu-button {
+  position: absolute;
+  visibility: hidden;
+}
+
+#menu-button:checked {
+   visibility: visible;
 }
 
 .sub-nav {
   display: flex;
+  padding-top: 2em;
 }
 
 /* media queries */
@@ -172,13 +183,12 @@ p {
 
   nav {
     padding: 0.5em;
-    min-height: calc(30vh);
+    min-height: calc(40vh);
     min-width: calc(100vw - 2em);
   }
 
   a.link {
     padding: 0;
-    margin-bottom: 1em;
     text-decoration:underline;
   }
 
@@ -186,6 +196,8 @@ p {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    min-height: 40vh;
+    width: auto;
   }
 
   .scroll {
@@ -212,7 +224,7 @@ p {
 
   nav {
     padding: 1.5em 3em;
-    min-height: calc(10vh);
+    min-height: calc(30vh);
     min-width: calc(100vw - 2em - 6em );
   }
 
@@ -227,6 +239,7 @@ p {
     flex-direction: row;
     justify-content: space-between;
     width: 50vw;
+    min-height: auto;
   }
 
   .scroll {

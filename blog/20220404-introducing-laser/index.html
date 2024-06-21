@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zapster</title>
+    <link href="https://lydiascarf.github.io/zapster/normalize.css?h=24cdc2cd127a42868474" rel="stylesheet">
+    <link href="https://lydiascarf.github.io/zapster/site.css?h=ae2b2ed2325d4fbe4d16" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <a class="title" href="https:&#x2F;&#x2F;lydiascarf.github.io&#x2F;zapster">  
+        <h2>Zapster</h2>
+      </a>
+      <span class="link" id="book-button"></span>
+      <a class="link desktop-only" href="https:&#x2F;&#x2F;lydiascarf.github.io&#x2F;zapster/electrolysis">Electrolysis</a>
+      <a class="link desktop-only" href="https:&#x2F;&#x2F;lydiascarf.github.io&#x2F;zapster/laser-hair-removal">Laser</a>
+      <a class="link desktop-only" href="https:&#x2F;&#x2F;lydiascarf.github.io&#x2F;zapster/blog">Blog</a>
+      <a class="link desktop-only" href="https:&#x2F;&#x2F;lydiascarf.github.io&#x2F;zapster/faq">FAQ</a>
+    </nav>
+    <main>
+      <h2 class="title" >Transcend Electrolysis is now Transcend Electrolysis &Laser</h2>
+      <div class="column">
+          
+          <p>Started on January 1st 2020, Transcend Electrolysis has added laser hair removal services. All services are performed by Isabella at the Mazzoni Center here in Philadelphia. Using state of the art Alexandrite and ndYag for all skin types. We strive to better serve our community offering different types of hair removal to those in need.</p>
+
+          
+      </div>
+    </main> 
+    <script>
+      (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://app.yocale.com/tentacle/tentacle.v1.0.0.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+        s.onload = s.onreadystatechange = function() {
+          if (!this.readyState || this.readyState === 'complete') {
+            Tentacle.run({
+              business: 'zapster',
+              type:'INLINE-BUTTON',
+              label:'Book Now',
+              labelColor:'#333',
+              iconColor:'#333',
+              backgroundColor:'#fff',
+              disableIcon:true,
+              targetSelector: '#book-button',
+              buttonClass: 'link',
+              buttonStyles:{
+                'font-size': '1.2em',
+                color: 'inherit',
+                padding: '0.7em 1em 0.3em 1em',
+                'font-family': 'Syne',
+                'box-shadow': 'none',
+                background: 'none'
+              }
+            });
+          }
+        };
+      })();
+      </script>
+  </body>
+</html>
+    

@@ -1,7 +1,7 @@
-$base-color: #fff;
-$border-dark: rgba($base-color, 0.75);
+/* vars and mix-ins */
 $font-size: 1.2em;
 
+/* text */
 @font-face {
   font-family: "Questrial";
   src: url("Questrial-Regular.ttf");
@@ -10,48 +10,6 @@ $font-size: 1.2em;
 @font-face {
   font-family: "Syne";
   src: url("Syne-Bold.ttf");
-}
-
-/* by element type */
-a.link {
-  font-family: 'Syne', sans-serif;
-  text-align: center;
-  pointer-events: all;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 0.7em 1em 0.3em 1em;
-  background: none;
-  color: inherit;
-  text-decoration: inherit;
-  user-select: none;
-  height: fit-content;
-}
-
-a.link:hover,
-a.link:active {
-  background: radial-gradient(circle, rgba(255, 255, 255, 1), transparent);
-}
-
-html {
-  font-family: "Questrial", sans-serif;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  display: flex;
-}
-
-body {
-  /* Position and center the image to scale nicely on all screens */
-  background-image: url("background.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100%;
-  min-width: 100%;
-  position: relative;
 }
 
 h1 {
@@ -72,41 +30,19 @@ h4 {
 
 a, p {
   font-size: $font-size;
-}
-
-main {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  padding: 2em;
-  min-height: calc(100vh - 4em);
-  min-width: calc(100vw - 4em);
-}
-
-nav {
-  align-items: flex-start;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5) 70%, transparent);
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  min-height: calc(50vh - 4em - 3em);
-  min-width: calc(100vw - 4em - 12em);
-  padding: 1.5em 6em;
-  position: sticky;
-  top: 0;
-}
-
-p {
   text-align: center;
 }
 
+.link {
+  color: inherit;
+  font-family: 'Syne', sans-serif;
+  padding: 0.5em 2em;
+  pointer-events: all;
+  text-align: center;
+  text-decoration: inherit;
+}
+
 .title {
-  background: none;
-  border: none;
   color: black;
   font-family: "Syne", sans-serif;
   padding: 0.25em 0.4em;
@@ -116,28 +52,54 @@ p {
   user-select: none;
 }
 
-.column {
+/* high level containers */
+html {
+  background-image: url("background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Questrial", sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100vw;
+}
+
+body {
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
+  margin: 1em;
+}
+
+nav {
+  align-items: baseline;
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+.column {
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 65vh;
+  overflow-y: scroll;
 }
 
-.scroll-border {
-  border: $border-dark solid 0.2em;
-  background: radial-gradient(circle, #fff, #fff 70%, transparent);
-  border-radius: 15px;
-  min-height: 40vh;
-  padding: 1em 2em 0 2em;
+span#book-button.link a {
+  padding: 0 !important;
+  text-transform: none !important;
 }
 
-.scroll {
-  overflow-y: auto;
-}
+/* browser element overrides */
 
 /* For browsers that support `scrollbar-*` properties */
 @supports (scrollbar-color: auto) {
   .scroll {
-    scrollbar-color: $border-dark transparent;
+    scrollbar-color: black transparent;
   }
 }
 
@@ -147,105 +109,70 @@ p {
     background: transparent;
   }
   .scroll::-webkit-scrollbar-thumb {
-    background: #777;
+    background: black;
   }
-}
-
-#menu-button {
-  position: absolute;
-  visibility: hidden;
-}
-
-#menu-button:checked {
-   visibility: visible;
-}
-
-.sub-nav {
-  display: flex;
-  padding-top: 2em;
 }
 
 /* media queries */
 @media (min-width:20em)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+  body {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1) 70%, rgba(255, 255, 255, 1));
+  }
+
+  main {
+    min-height: calc(90vh - 2em);
+  }
+
+  nav {
+    padding: 0;
+  }
+
+  .column {
+    padding: .25em 0.4em;
+
+  }
+  
+  .mobile-column-reverse {
+    flex-direction: column-reverse;
+  }
+
   .mobile-only {
-    display: initial;
+    display: flex;
   }
 
   .desktop-only {
     display: none;
-  }
-
-  main {
-    padding: 0.5em;
-    min-height: calc(100vh - 1em);
-    min-width: calc(100vw - 1em);
-  }
-
-  nav {
-    padding: 0.5em;
-    min-height: calc(40vh);
-    min-width: calc(100vw - 2em);
-  }
-
-  a.link {
-    padding: 0;
-    text-decoration:underline;
-  }
-
-  .sub-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    min-height: 40vh;
-    width: auto;
-  }
-
-  .scroll {
-    margin: 0 0.5em;
-    width: calc(100vw - 5em);
-    height: calc(100vh - 20em);
   }
 }
 
 @media (min-width:30em)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+  body {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 1));
+  }
+
+  main {
+    min-height: calc(90vh - 6em);
+  }
+
+  nav {
+    margin: 1em 0;
+    padding: 1em;
+  }
+
+  .column {
+    padding: .25em 12em;
+  }
+
+  .mobile-column-reverse {
+    flex-direction: column;
+  }
+
   .mobile-only {
     display: none;
   }
 
   .desktop-only {
-    display: initial;
-  }
-
-  main {
-    padding: 1em;
-    min-height: calc(100vh - 2em);
-    min-width: calc(100vw - 2em);
-  }
-
-  nav {
-    padding: 1.5em 3em;
-    min-height: calc(30vh);
-    min-width: calc(100vw - 2em - 6em );
-  }
-
-  a.link {
-    /* margin-bottom: 1em; */
-    padding: 0.7em 1em 0.3em 1em;
-    text-decoration: inherit;
-  }
-
-  .sub-nav {
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50vw;
-    min-height: auto;
-  }
-
-  .scroll {
-    margin: 0 3.5em;
-    height: calc(50vh - 7em);
-    width: calc(100vw - 14em);
+    display: flex;
   }
 }
 

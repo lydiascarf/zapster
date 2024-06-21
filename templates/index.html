@@ -8,21 +8,59 @@
     <link href="{{ get_url(path="normalize.css", cachebust=true) | safe }}" rel="stylesheet">
     <link href="{{ get_url(path="site.css", cachebust=true) | safe }}" rel="stylesheet">
   </head>
-  <body>
+  <body class="mobile-column-reverse">
+    <nav>
+      <a class="title desktop-only" href="{{ config.base_url }}">  
+        <h2>Zapster</h2>
+      </a>
+      <span class="link" id="book-button"></span>
+      <a class="link desktop-only" href="{{ config.base_url }}/electrolysis">Electrolysis</a>
+      <a class="link desktop-only" href="{{ config.base_url }}/laser-hair-removal">Laser</a>
+      <a class="link desktop-only" href="{{ config.base_url }}/blog">Blog</a>
+      <a class="link" href="{{ config.base_url }}/faq">FAQ</a>
+    </nav>
     <main>
-      <nav>
-        <a class="title" href="{{ config.base_url }}">  
-          <h2>Zapster</h2>
-          <h4>Laser & Electrolysis</h4>
+      <a class="title mobile-only" href="{{ config.base_url }}">  
+        <h2>Zapster</h2>
+      </a>
+      <div class="column">
+        <a class="title" href="{{ config.base_url }}" style="padding-top: 4em;">  
+          <h4>Safe, comfortable hair removal for everyone</h4>
         </a>
-        <div class="sub-nav">
-          <a class="link" href="https://www.yocale.com/widget/zapster">Book Now</a>
-          <a class="link" href="{{ config.base_url }}/blog">Blog</a>
-          <a class="link" href="{{ config.base_url }}/electrolysis">Electrolysis</a>
-          <a class="link" href="{{ config.base_url }}/laser-hair-removal">Laser</a>
-          <a class="link" href="{{ config.base_url }}/faq">FAQ</a>
-        </div>
-      </nav>
-    </main>
+      </div>
+    </main> 
+    <script>
+      (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://app.yocale.com/tentacle/tentacle.v1.0.0.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+        s.onload = s.onreadystatechange = function() {
+          if (!this.readyState || this.readyState === 'complete') {
+            Tentacle.run({
+              business: 'zapster',
+              type:'INLINE-BUTTON',
+              label:'Book Now',
+              labelColor:'#333',
+              iconColor:'#333',
+              backgroundColor:'#fff',
+              disableIcon:true,
+              targetSelector: '#book-button',
+              buttonClass: 'link',
+              buttonStyles:{
+                'font-size': '1.2em',
+                color: 'inherit',
+                padding: '0.7em 1em 0.3em 1em',
+                'font-family': 'Syne',
+                'box-shadow': 'none',
+                background: 'none'
+              }
+            });
+          }
+        };
+      })();
+      </script>
   </body>
 </html>
